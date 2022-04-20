@@ -1,5 +1,5 @@
 {
-  "name": "Brofian/cron-translator",
+  "name": "brofian/cron-translator",
   "description": "A simple and lightweight cron expression to human readable translator",
   "type": "library",
   "keywords": [
