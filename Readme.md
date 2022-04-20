@@ -7,7 +7,7 @@ Supported languages:
 
 # Installation
 ```sh
-// comming soon
+composer require brofian/cron-translator
 ```
 
 # Usage
