@@ -1,0 +1,29 @@
+{
+  "name": "Brofian/cron-translator",
+  "description": "A simple and lightweight cron expression to human readable translator",
+  "type": "library",
+  "keywords": [
+    "cron",
+    "translate"
+  ],
+  "homepage": "https://github.com/Brofian/cron-translator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Fabian Holzwarth",
+      "email": "info@fabianholzwarth.de",
+      "role": "developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/Brofian/cron-translator/issues"
+  },
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Brofian\\CronTranslator\\": "src/"
+    }
+  }
+}
