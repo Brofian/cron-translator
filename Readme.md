@@ -5,6 +5,8 @@ Supported languages:
 - de
 - en (comming soon)
 
+> Hint: I created this package, because i was not completely satisfied with the (at this time) most popular solution [lorisleiva/cron-translator](https://packagist.org/packages/lorisleiva/cron-translator) and wanted to create a much more simple way. If you are searching for a professional solution, i would recommend the other package
+
 # Installation
 ```sh
 composer require brofian/cron-translator
