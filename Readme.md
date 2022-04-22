@@ -5,6 +5,8 @@ Supported languages:
 - de
 - en (comming soon)
 
+> Hint: I created this package, because i was not completely satisfied with the (at this time) most popular solution [lorisleiva/cron-translator](https://packagist.org/packages/lorisleiva/cron-translator) and wanted to create a much more simple way. If you are searching for a professional solution, i would recommend the other package
+
 # Installation
 ```sh
 composer require brofian/cron-translator
@@ -17,11 +19,11 @@ use Brofian\CronTranslator\CronTranslator;
 // 'Jede Minute'
 echo CronTranslator::expressionToString('* * * * *');
 
-// 'Jede Minute in jeder 1.Stunde an jedem 2.Tag, im März am einem Donnerstag'
+// 'Jede Minute der 1.Stunde an jedem 2.Tag, im März am einem Donnerstag'
 echo CronTranslator::expressionToString('* 1 2 3 4');
 
-// 'Jede 5,10,15,20.Minute in jeder 3,4,5.Stunde'
-echo CronTranslator::expressionToString('5,10,15,20 3,4,5 * * *');
+// 'Die 17. und 30.Minute der 2.Stunde von Montag bis Freitag'
+echo CronTranslator::expressionToString('17,30 2 * * 1-5');
 
 // 'Jede 15.Minute von 10 Uhr bis 12 Uhr von Montag bis Freitag'
 echo CronTranslator::expressionToString('*/15 10-12 * * 1-5');
