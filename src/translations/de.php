@@ -46,7 +46,7 @@ return [
             'single' => ' der %s.Stunde',
             'always' => '',
             'range_prefix' => '',
-            'range' => ' von %02s Uhr bis %02s Uhr'
+            'range' => ' zwischen %s und %s Uhr'
         ],
         'days' => [
             'prefix' => ' ',
