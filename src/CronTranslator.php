@@ -30,27 +30,35 @@ class CronTranslator {
 
     public function toString(): string {
 
-        // minutes
-        $minutes = $this->parseMinutePhrases();
-        $hours = $this->parseHourPhrases();
-        $days = $this->parseDayPhrases();
-        $months = $this->parseMonthPhrases();
-        $weekdays = $this->parseWeekdayPhrases();
 
-        $string = $this->trans('phrases.minutes.prefix') . $minutes . $this->trans('phrases.minutes.suffix');
-
-        if($hours) {
-            $string .= $this->trans('phrases.hours.prefix') . $hours . $this->trans('phrases.hours.suffix');
+        if($this->isSingleItem($this->data['minutes']) && $this->isSingleItem($this->data['hours'])) {
+            $string = sprintf($this->trans('phrases.combination.clock'), $this->data['hours'][0]['from'], $this->data['minutes'][0]['from']);
         }
+        else {
+            $minutes = $this->parseMinutePhrases();
+            $string = $this->trans('phrases.minutes.prefix') . $minutes . $this->trans('phrases.minutes.suffix');
+
+            $hours = $this->parseHourPhrases();
+            if($hours) {
+                $string .= $this->trans('phrases.hours.prefix') . $hours . $this->trans('phrases.hours.suffix');
+            }
+        }
+
+        $days = $this->parseDayPhrases();
         if($days) {
             $string .= $this->trans('phrases.days.prefix') . $days . $this->trans('phrases.days.suffix');
         }
+
+        $months = $this->parseMonthPhrases();
         if($months) {
             $string .= $this->trans('phrases.months.prefix') . $months . $this->trans('phrases.months.suffix');
         }
+
+        $weekdays = $this->parseWeekdayPhrases();
         if($weekdays) {
             $string .= $this->trans('phrases.weekdays.prefix') . $weekdays . $this->trans('phrases.weekdays.suffix');
         }
+
 
         return ucfirst($string);
     }
@@ -195,7 +203,13 @@ class CronTranslator {
 
         // check, if it is a simple list
         if($this->isListOfSingleItems($this->data['minutes'])) {
-            return sprintf($this->trans('phrases.minutes.single'), implode(',', array_column($this->data['minutes'], 'from')));
+            $listString = implode('.,', array_column($this->data['minutes'], 'from'));
+            $lastSeparator = strrpos($listString, ',');
+            if($lastSeparator) {
+                $listString = substr_replace($listString, $this->trans('phrases.minutes.connection'), $lastSeparator, strlen(','));
+            }
+
+            return sprintf($this->trans('phrases.minutes.single'), $listString);
         }
 
         foreach($this->data['minutes'] as $minute) {
@@ -261,6 +275,16 @@ class CronTranslator {
                 $item['interval']   !== null
             );
         }));
+    }
+
+    protected function isSingleItem(array $items): bool
+    {
+        return (
+            count($items) === 1 &&
+            $items[0]['from'] !== '*' &&
+            $items[0]['to'] === null &&
+            $items[0]['interval'] === null
+        );
     }
 
 }

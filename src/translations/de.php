@@ -34,7 +34,7 @@ return [
             'suffix' => '',
             'connection' => ' und ',
             'interval' => 'jede %s.Minute',
-            'single' => 'jede %s.Minute',
+            'single' => 'Die %s.Minute',
             'always' => 'jede Minute',
             'range' => ' von %s bis %s'
         ],
@@ -43,7 +43,7 @@ return [
             'suffix' => '',
             'connection' => ' und',
             'interval' => ' in jeder %s.Stunde',
-            'single' => ' in jeder %s.Stunde',
+            'single' => ' der %s.Stunde',
             'always' => '',
             'range_prefix' => '',
             'range' => ' von %s Uhr bis %s Uhr'
@@ -77,6 +77,10 @@ return [
             'always' => '',
             'range_prefix' => '',
             'range' => ' von %s bis %s'
+        ],
+
+        'combination' => [
+            'clock' => 'Um %02s:%02s Uhr'
         ]
     ]
 

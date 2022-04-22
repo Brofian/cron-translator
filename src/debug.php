@@ -4,8 +4,11 @@ require_once __DIR__.'/CronTranslator.php';
 
 use Brofian\CronTranslator\CronTranslator;
 
-echo CronTranslator::expressionToString('* * * * *') . PHP_EOL;
+echo CronTranslator::expressionToString('17,30 2 * * 1-5') . PHP_EOL;
+echo CronTranslator::expressionToString('* 1 2 3 4') . PHP_EOL;
 echo CronTranslator::expressionToString('*/15 10-12 * * 1-5') . PHP_EOL;
+echo CronTranslator::expressionToString('30 */4 * * 1-5') . PHP_EOL;
+echo CronTranslator::expressionToString('10 */6 * * *') . PHP_EOL;
 
 
 // echo CronTranslator::expressionToString('* 1 2 3 4') . PHP_EOL;
