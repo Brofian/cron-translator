@@ -32,38 +32,38 @@ return [
         'minutes' => [
             'prefix' => '',
             'suffix' => '',
-            'connection' => ' und ',
-            'interval' => 'jede %s.Minute',
-            'single' => 'Die %s.Minute',
+            'connection' => 'und',
+            'interval' => 'jede %s. Minute',
+            'single' => 'Die %s. Minute',
             'always' => 'jede Minute',
             'range' => ' von %s bis %s'
         ],
         'hours' => [
             'prefix' => '',
             'suffix' => '',
-            'connection' => ' und',
-            'interval' => ' in jeder %s.Stunde',
-            'single' => ' der %s.Stunde',
+            'connection' => 'und',
+            'interval' => 'in jeder %s. Stunde',
+            'single' => 'der %s. Stunde',
             'always' => '',
             'range_prefix' => '',
-            'range' => ' von %02s Uhr bis %02s Uhr'
+            'range' => 'von %02s Uhr bis %02s Uhr'
         ],
         'days' => [
             'prefix' => ' ',
             'suffix' => '',
-            'connection' => ' und ',
-            'interval' => 'an jedem %s.Tag',
-            'single' => 'an jedem %s.Tag',
+            'connection' => 'und',
+            'interval' => 'an jedem %s. Tag',
+            'single' => 'an jedem %s. Tag',
             'always' => '',
             'range_prefix' => 'an jedem Tag',
-            'range' => ' vom %s. bis zum %s.'
+            'range' => 'vom %s. bis zum %s.'
         ],
         'months' => [
             'prefix' => ',',
             'suffix' => '',
-            'connection' => ' und',
-            'interval' => ' jeden %s.Monat',
-            'single' => ' im %s',
+            'connection' => 'und',
+            'interval' => 'jeden %s. Monat',
+            'single' => 'im %s',
             'always' => '',
             'range_prefix' => '',
             'range' => ' von %s bis %s'
@@ -71,12 +71,12 @@ return [
         'weekdays' => [
             'prefix' => '',
             'suffix' => '',
-            'connection' => ' und ',
-            'interval' => ' an jedem %s.Wochentag',
-            'single' => ' am einem %s',
+            'connection' => 'und',
+            'interval' => 'an jedem %s. Wochentag',
+            'single' => 'am einem %s',
             'always' => '',
             'range_prefix' => '',
-            'range' => ' von %s bis %s'
+            'range' => 'von %s bis %s'
         ],
 
         'combination' => [
